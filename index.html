@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi Zero Camera Monitor</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e2e;
+            color: #cdd6f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: #181825;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #89b4fa;
+        }
+        .video-box {
+            border: 2px solid #45475a;
+            border-radius: 8px;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+        }
+        img {
+            width: 100%;
+            max-width: 640px;
+            height: auto;
+            display: block;
+        }
+        .status {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #a6e3a1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Raspberry Pi Zero W Camera Stream</h1>
+        <div class="video-box">
+            <img src="{{ url_for('video_feed') }}" alt="Camera Stream">
+        </div>
+        <div class="status">● Trạng thái: Đang phát trực tiếp</div>
+    </div>
+</body>
+</html>
